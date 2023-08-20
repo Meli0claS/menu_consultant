@@ -1,0 +1,24 @@
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "admin",
+    "password": "admin123",
+}
+
+
+###
+POST http://localhost:5000/api/menus/add_menu
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDlhNWIwMjZkNTU0NWQzNGQ5ODE1MmIiLCJpYXQiOjE2ODk0OTY2ODh9.8BRq-LsR-1T26xbEiOwlBTl1swFn1I94G_oc6IaUsXY
+
+{
+    "items": ["Canh mướp đắng nhồi thịt", "Salad", "Thịt ba chỉ luộc", "Ốc móng tay xào"],
+    "tags": ["buổi trưa", "buổi tối", "bình thường", "tiết kiệm", "giàu đạm"]
+}
+
+###
+GET http://localhost:5000/api/menus/get_tags
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDlhNWIwMjZkNTU0NWQzNGQ5ODE1MmIiLCJpYXQiOjE2ODk0OTY2ODh9.8BRq-LsR-1T26xbEiOwlBTl1swFn1I94G_oc6IaUsXY
+
