@@ -37,11 +37,15 @@ router.post('/register', async (req, res) => {
             return res.status(400).json({ success: false, message: 'Email đã tồn tại' });
 
         const hashedPassword = await argon2.hash(password);
+        const otp = otpGenerator.generate(10, { upperCaseAlphabets: true, specialChars: false });
+        const otp_created_at = Date.now();
         const newUser = new User({
             fullname,
             email,
             username,
             password: hashedPassword,
+            otp,
+            otp_created_at
         });
         await newUser.save();
 
