@@ -25,6 +25,16 @@ router.get('/get_all_menus', verifyToken, async (req, res) => {
     }
 })
 
+router.get('/get_inpublic_menus', verifyToken, async (req, res) => {
+    try {
+        const menus = await Menu.find({ isPublic: false }).populate('user', ['username']).sort({ createdAt: -1 });
+        res.json({ success: true, menus });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+})
+
 router.get('/get_tags', verifyToken, async (req, res) => {
     try {
         const tags = await Menu.distinct('tags');
