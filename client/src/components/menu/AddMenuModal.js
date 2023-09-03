@@ -46,7 +46,7 @@ const AddMenuModal = () => {
 
 	const sideOptions = [
 		{ value: "miền bắc", label: "miền bắc" },
-		{ value: "tăng nam", label: "miền nam"},
+		{ value: "miền nam", label: "miền nam"},
 		{ value: "miền trung", label: "miền trung" },
 	]
 
